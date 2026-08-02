@@ -1,54 +1,148 @@
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=22172535)
-# CS F342 – Computer Architecture Labs
+# Single-Cycle RISC-V Processor in Verilog
+
+A modular implementation of a **single-cycle RISC-V processor** developed in Verilog HDL. The project progressively builds the processor from fundamental digital logic blocks to a complete single-cycle CPU, covering datapath design, control logic, ALU implementation, memory interfaces, and processor integration.
+
+The repository demonstrates practical RTL design, processor architecture concepts, and functional verification through simulation.
 
 ---
 
-## 1. Purpose of This Repository
+# Features
 
-This repository contains all laboratory work for CS F342 – Computer Architecture.
-
-You will use one repository and one GitHub Codespace for the entire semester.
-All labs build on each other, so do not create separate repositories per lab.
-
----
-
-## 2. Getting Started
-
-### Step 1: Open in GitHub Codespaces
-
-1. Open this repository on GitHub
-2. Click Code → Codespaces → Create codespace on main
-3. Wait for the Codespace to finish setting up
-
-You are expected to work inside Codespaces. This will allow you to complete the labs and assignments later, in case you do not finish them in the lab, without needing to set up the tools on your own computer.
+- RV32I single-cycle processor architecture
+- Modular RTL implementation
+- Register file
+- Arithmetic Logic Unit (ALU)
+- Immediate Generator
+- Control Unit
+- ALU Control
+- Program Counter
+- Instruction Memory
+- Data Memory
+- Functional simulation using Verilog testbenches
 
 ---
 
-## 3. Repository Structure
+# Processor Organization
 
-labs/        All lab work (lab1, lab2, ...)
-shared/      Reusable Verilog modules
-artefacts/   Generated simulation outputs
-scripts/     Compile and run scripts (not visible in codespace and not to be edited)
-.vscode/     VS Code task configuration (not visible in codespace and not to be edited)
-.devcontainer/ Codespaces environment setup (not visible in codespace and not to be edited)
+The processor consists of reusable RTL modules located in the `rtl/` directory.
+
+Major modules include:
+
+- Program Counter
+- Register File
+- Control Unit
+- ALU Control
+- Immediate Generator
+- Arithmetic Logic Unit
+- Instruction Memory
+- Data Memory
+- CPU Top Module
+
+---
+
+# Repository Structure
+
+```text
+single-cycle-riscv-cpu/
+
+├── rtl/
+│   Reusable RTL modules
+│
+├── labs/
+│   Progressive implementation stages
+│
+├── results/
+│   Simulation outputs
+│
+├── scripts/
+│   Utility scripts
+│
+├── docs/
+│   Architecture diagrams and screenshots
+│
+├── README.md
+├── LICENSE
+└── .gitignore
+```
 
 ---
 
-## 4. Lab Organization
+# Progressive Implementation
 
-Each lab is stored in a numbered folder (lab1, lab2, ...).
-Each lab has several tasks to be completed and a `manual.md` file explaining the work.
+The processor was developed through successive implementation stages.
+
+| Stage | Focus |
+|------|------------------------------|
+| Lab 1 | Basic combinational logic |
+| Lab 2 | Sequential circuits and FSMs |
+| Lab 3 | Instruction encoding |
+| Lab 4 | Datapath building blocks |
+| Lab 5 | Control logic |
+| Lab 6 | Processor integration |
+| Lab 7 | Memory subsystem |
+| Lab 8 | Complete single-cycle processor |
 
 ---
 
-## 5. Workflow Summary
+# Directory Overview
 
-1. Open in Codespaces
-2. Read lab manual
-3. Edit Verilog files
-4. Compile and run
-5. Debug
-6. Commit and push
+## rtl/
+
+Contains reusable RTL modules implementing the processor datapath and control logic.
+
+Examples include:
+
+- ControlUnit
+- Register File
+- ALU
+- Immediate Generator
+- Program Counter
+- Memory Modules
 
 ---
+
+## labs/
+
+Contains the implementation stages, corresponding testbenches, and manuals documenting the evolution of the processor.
+
+---
+
+## results/
+
+Stores generated simulation outputs.
+
+---
+
+## scripts/
+
+Utility scripts for compiling and running simulations.
+
+---
+
+# Future Improvements
+
+Possible extensions include:
+
+- Five-stage pipelined implementation
+- Hazard detection
+- Forwarding unit
+- Branch prediction
+- Cache hierarchy
+- CSR support
+- Performance benchmarking
+
+---
+
+# Tools
+
+- Verilog HDL
+- Icarus Verilog
+- GTKWave
+- Git
+- VS Code
+
+---
+
+# License
+
+Released under the MIT License.
